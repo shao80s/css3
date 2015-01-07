@@ -73,9 +73,9 @@ background-color:red;
 
 <p>带有 target 属性的链接会得到红色背景：</p>
 
-<a href="http://www.w3school.com.cn">www.jikexueyuan.com</a>
-<a href="http://www.disney.com" target="_blank">http://www.jikexueyuan.com/resources/</a>
-<a href="http://www.wikipedia.org" target="_top">http://www.jikexueyuan.com/vip/</a>
+<a href="http://www.jikexueyuan.com">www.jikexueyuan.com</a>
+<a href="www.jikexueyuan.com/resources/" target="_blank">http://www.jikexueyuan.com/resources/</a>
+<a href="www.jikexueyuan.com/vip/" target="_top">http://www.jikexueyuan.com/vip/</a>
 
 </body>
 </html>
