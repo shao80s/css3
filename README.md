@@ -150,6 +150,7 @@ border:5px solid red;
 指选择attr属性值以“value”开头的所有元素，换句话说，选择的属性其以对应的属性值是以“value”开始的
 
 例：
+
 ```javascript
 <!DOCTYPE html>
 <html>
@@ -165,6 +166,7 @@ p[title^="val"] {color:#FF0000;}
 </div>
 </body>
 </html>
+```
 
 ### 2.6 属性选择器：E[attr$="value"]
 
