@@ -143,3 +143,566 @@ border:5px solid red;
 ```
 
 > 注：对于 IE8 及更早版本的浏览器中的 [attribute~=value]，必须声明 <!DOCTYPE>。
+
+
+### 2.5 属性选择器：E[attr^="value"]
+
+指选择attr属性值以“value”开头的所有元素，换句话说，选择的属性其以对应的属性值是以“value”开始的
+
+例：
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+<style type="text/css">
+p[title^="val"] {color:#FF0000;}
+</style>
+</head>
+<body>
+<div style="width:733px; border: 1px solid #666; padding:5px;">
+<p title="value">匹配具有att属性、且值以val开头的E元素</p>
+</div>
+</body>
+</html>
+
+### 2.6 属性选择器：E[attr$="value"]
+
+匹配具有att属性、且值以val结尾的E元素
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+p[title$="val"] {font-weight:bold;}
+</style>
+</head>
+<body>
+<div style="width:733px; border: 1px solid #666; padding:5px;">
+<p title="this is val">匹配具有att属性、且值以val结尾的E元素</p>
+</div>
+</body>
+</html>
+```
+
+### 2.7 属性选择器：E[attr*="value"]
+
+匹配具有att属性、且值中含有val的E元素
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+p[title*="val"] {text-decoration:underline;}
+</style>
+</head>
+<body>
+<div style="width:733px; border: 1px solid #666; padding:5px;">
+<p title="have val word">匹配具有att属性、且值中含有val的E元素</p>
+</div>
+</body>
+</html>
+```
+
+### 2.8 伪类选择器：E:root
+
+匹配文档的根元素，在HTML中，根元素永远是HTML。
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:root
+{
+background:#35b558;
+}
+</style>
+</head>
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行。</p>
+
+</body>
+</html>
+```
+
+### 2.9  伪类选择器：E:nth-child(n)
+
+匹配父元素中的第n个子元素E
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:nth-child(2)
+{
+background:#35b558;
+}
+</style>
+</head>
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行</p>
+
+</body>
+</html>
+```
+
+> 注：</b>Internet Explorer 不支持 :nth-child() 选择器。
+
+### 2.10 伪类选择器：nth-last-child()
+
+规定属于其父元素的第二个子元素的每个 p 元素，从最后一个子元素开始计数。
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:nth-last-child(2)
+{
+background:#35b558;
+}
+</style>
+</head>
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行</p>
+
+</body>
+</html>
+```
+
+### 2.11 伪类选择器：E:nth-of-type(n)
+
+匹配同类型中的第n个同级兄弟元素E
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:nth-of-type(2)
+{
+background:#35b558;
+}
+</style>
+</head>
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行</p>
+
+</body>
+</html>
+```
+
+### 2.12 伪类选择器：E:nth-last-of-type(n)
+
+匹配同类型中的倒数第n个同级兄弟元素E
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:nth-last-of-type(2)
+{
+background:#35b558;
+}
+</style>
+</head>
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行</p>
+
+</body>
+</html>
+```
+
+### 2.13 结构性伪类选择器：E:last-child
+
+匹配父元素中最后一个E元素
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:last-child
+{
+background:#35b558;
+}
+</style>
+</head>
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行</p>
+
+</body>
+</html>
+```
+
+### 2.14 结构性伪类选择器：E:first-of-type
+
+匹配同级兄弟元素中的第一个E元素
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:first-of-type
+{
+background:#35b558;
+}
+</style>
+</head>
+
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行</p>
+
+</body>
+</html>
+```
+
+### 2.15 结构性伪类选择器：E:only-child
+
+匹配属于父元素中唯一子元素的E
+
+例：
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:last-child
+{
+background:#35b558;
+}
+</style>
+</head>
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行</p>
+
+</body>
+</html>
+```
+
+### 2.16 结构性伪类选择器：E:only-of-type
+
+匹配属于同类型中唯一兄弟元素的E
+
+例：
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:only-of-type
+{
+background:#35b558;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+<p>第一行</p>
+</div>
+
+<div>
+<p>第二行</p>
+<p>第三行</p>
+</div>
+
+</body>
+</html>
+```
+
+### 2.17 结构性伪类选择器：E:empty
+
+匹配没有任何子元素（包括text节点）的元素E
+
+例：
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p:empty
+{
+width:100px;
+height:20px;
+background:#35b558;
+}
+</style>
+</head>
+<body>
+
+<h1>标题-极客学院</h1>
+<p>第一行</p>
+<p></p>
+<p>第二行</p>
+<p>第三行</p>
+<p>第四行</p>
+
+</body>
+</html>
+```
+
+### 2.18 UI元素状态伪类选择器：E:checked
+
+匹配所有用户界面（form表单）中处于选中状态的元素E
+
+例：
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input:checked
+{
+background:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<form action="">
+<input type="radio" checked="checked" value="male" name="gender" /> Male<br>
+<input type="radio" value="female" name="gender" /> Female<br>
+<input type="checkbox" checked="checked" value="Bike" /> I have a bike<br>
+<input type="checkbox" value="Car" /> I have a car
+</form>
+
+</body>
+</html>
+```
+
+> 注：由于只有Opera支持，本例只在 Opera 中正确工作。
+
+### 2.19 UI元素状态伪类选择器：E:enabled
+
+匹配所有用户界面（form表单）中处于可用状态的E元素
+
+例：
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input[type="text"]:enabled
+{
+background:#ffff00;
+}
+input[type="text"]:disabled
+{
+background:#dddddd;
+}
+</style>
+</head>
+<body>
+
+<form action="">
+First name: <input type="text" value="jike" /><br>
+Last name: <input type="text" value="xueyuan" /><br>
+Country: <input type="text" disabled="disabled" value="Disneyland" /><br>
+</form>
+
+</body>
+</html>
+```
+
+### 2.20 UI元素状态伪类选择器：E:enabled
+
+匹配所有用户界面（form表单）中处于不可用状态的E元素
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input[type="text"]:enabled
+{
+background:#ffff00;
+}
+input[type="text"]:disabled
+{
+background:#dddddd;
+}
+</style>
+</head>
+<body>
+
+<form action="">
+First name: <input type="text" value="jike" /><br>
+Last name: <input type="text" value="xueyuan" /><br>
+Country: <input type="text" disabled="disabled" value="Disneyland" /><br>
+</form>
+
+</body>
+</html>
+```
+
+### 2.21 UI元素状态伪类选择器：E::selection
+
+匹配E元素中被用户选中或处于高亮状态的部分
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+::selection
+{
+color:#ff0000;
+}
+::-moz-selection
+{
+color:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<h1>请试着选取页面上的文本</h1>
+
+<p>一行文字一行文字</p>
+
+<div>这是 div 元素中的文本。</div>
+
+<br>
+
+<a href="http://www.jikexueyuan.com" target="_blank">访问 极客学院</a>
+
+</body>
+</html>
+```
+
+### 2.22 目标伪类： E:target
+
+匹配相关URL指向的E元素
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+:target
+{
+border: 2px solid #D4D4D4;
+background-color: #e5eecc;
+}
+</style>
+</head>
+<body>
+
+<h1>这是标题</h1>
+
+<p><a href="#news1">显示第一行</a></p>
+<p><a href="#news2">显示第二行</a></p>
+
+<p>请点击上面的链接，:target 选择器会突出显示当前活动的 HTML 锚点。</p>
+
+<p id="news1"><b>第一行...</b></p>
+<p id="news2"><b>第二行...</b></p>
+
+</body>
+</html>
+```
+
+> 注：</b> Internet Explorer 8 以及更早的版本不支持 :target 选择器。
+
+### 2.23 否定伪类： E:not(s)
+
+匹配所有不匹配简单选择符s的元素E
+
+例：
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p
+{
+color:#000000;
+}
+:not(p)
+{
+color:#ff0000;
+}
+</style>
+</head>
+<body>
+
+<h1>这是标题</h1>
+
+<p>第一行</p>
+
+<p>第二行</p>
+
+<div>这是 div 元素中的文本。</div>
+
+<br>
+
+<a href="http://www.jikexueyuan.com" target="_blank">访问 极客学院</a>
+
+</body>
+</html>
+```
